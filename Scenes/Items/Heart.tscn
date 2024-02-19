@@ -6,6 +6,7 @@
 
 [node name="Item" instance=ExtResource("1_2vi5y")]
 script = ExtResource("2_uk5ar")
+health_increment = 1
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_y2bbk")
