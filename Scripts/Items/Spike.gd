@@ -8,6 +8,7 @@ func _process(delta):
 
 func consume():
 	# TODO: deal damage to player
+	print("Used spike item, deal damage to player")
 	pass
 
 func on_enemy_enter():
