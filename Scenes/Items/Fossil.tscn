@@ -1,0 +1,22 @@
+[gd_scene load_steps=12 format=3 uid="uid://bxwpn6axuwy7v"]
+
+[ext_resource type="PackedScene" uid="uid://ha8ninm5fg3s" path="res://Scenes/Items/Item.tscn" id="1_10kkr"]
+[ext_resource type="Script" path="res://Scripts/Items/Fossil.gd" id="2_uxidi"]
+[ext_resource type="Texture2D" uid="uid://b4malxupeh1hm" path="res://Assets/Textures/Items/Fossils/fossil-1.png" id="3_duwab"]
+[ext_resource type="Texture2D" uid="uid://cpdivhxhc6tin" path="res://Assets/Textures/Items/Fossils/fossil-2.png" id="4_4kbke"]
+[ext_resource type="Texture2D" uid="uid://co7lqtnp25bp7" path="res://Assets/Textures/Items/Fossils/fossil-3.png" id="5_cm6tq"]
+[ext_resource type="Texture2D" uid="uid://cqneih52tmeac" path="res://Assets/Textures/Items/Fossils/fossil-4.png" id="6_esy5b"]
+[ext_resource type="Texture2D" uid="uid://csi3bypbl318m" path="res://Assets/Textures/Items/Fossils/fossil-5.png" id="7_hng3a"]
+[ext_resource type="Texture2D" uid="uid://gon2mifw6ejb" path="res://Assets/Textures/Items/Fossils/fossil-6.png" id="8_vutfy"]
+[ext_resource type="Texture2D" uid="uid://74eu05dmbipc" path="res://Assets/Textures/Items/Fossils/fossil-7.png" id="9_bwc4n"]
+[ext_resource type="Texture2D" uid="uid://dg4cth0121vsd" path="res://Assets/Textures/Items/Fossils/fossil-8.png" id="10_vc2n2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_meuuf"]
+
+[node name="Item" instance=ExtResource("1_10kkr")]
+script = ExtResource("2_uxidi")
+fossil_textures = [ExtResource("3_duwab"), ExtResource("4_4kbke"), ExtResource("5_cm6tq"), ExtResource("6_esy5b"), ExtResource("7_hng3a"), ExtResource("8_vutfy"), ExtResource("9_bwc4n"), ExtResource("10_vc2n2")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_meuuf")
