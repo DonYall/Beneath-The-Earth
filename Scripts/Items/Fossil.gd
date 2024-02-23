@@ -6,7 +6,8 @@ var sprite
 func _ready():
 	sprite = $Sprite2D
 
-	change_texture(3)
+	# set default texture to first fossil
+	change_texture(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
