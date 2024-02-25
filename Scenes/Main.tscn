@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://vhao644o8frr"]
+[gd_scene load_steps=4 format=3 uid="uid://vhao644o8frr"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_bkaxq"]
 [ext_resource type="PackedScene" uid="uid://cp0jqas1n1gim" path="res://Scenes/Player.tscn" id="1_wmqh7"]
+[ext_resource type="PackedScene" uid="uid://0dkrbow1aum" path="res://Scenes/Items/EnemySpawner.tscn" id="3_ajtfq"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_bkaxq")
@@ -16,3 +17,6 @@ color = Color(0.796078, 0.745098, 0.631373, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_wmqh7")]
 position = Vector2(27, 28)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_ajtfq")]
+position = Vector2(331, 186)

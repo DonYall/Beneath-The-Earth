@@ -16,4 +16,15 @@ func consume():
 
 
 func _on_spawn_timer_timeout():
+	# create instance of enemy scene
+	var enemy = enemy_scene.instantiate()
+
+	# position to spawn enemy
+	position = self.position 
+
+	# move enemy to position
+	enemy.position = position
+	
+	add_child(enemy)
+	
 	pass # Replace with function body.
