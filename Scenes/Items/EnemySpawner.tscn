@@ -3,8 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://ha8ninm5fg3s" path="res://Scenes/Items/Item.tscn" id="1_gn6f0"]
 [ext_resource type="Script" path="res://Scripts/Items/EnemySpawner.gd" id="2_jgbdf"]
 
-[node name="Item" instance=ExtResource("1_gn6f0")]
+[node name="EnemySpawner" instance=ExtResource("1_gn6f0")]
 script = ExtResource("2_jgbdf")
+enemy_scene = null
 
 [node name="Sprite2D" parent="." index="0"]
 texture = null
+
+[node name="SpawnTimer" type="Timer" parent="." index="2"]
+wait_time = 5.0
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

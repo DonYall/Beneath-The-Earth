@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cp0jqas1n1gim"]
 
-[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_024b0"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_024b0"]
 [ext_resource type="Texture2D" uid="uid://dqml4xltxyq4g" path="res://Assets/Textures/Player/digging1.png" id="1_steu6"]
 [ext_resource type="Texture2D" uid="uid://d0fdj78qcob0m" path="res://Assets/Textures/Player/digging2.png" id="2_as2j7"]
 [ext_resource type="Texture2D" uid="uid://q2sr6oseq44q" path="res://Assets/Textures/Player/digging3.png" id="3_2k1qj"]
@@ -54,5 +54,6 @@ sprite_frames = SubResource("SpriteFrames_ovbxp")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ir5ya")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

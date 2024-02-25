@@ -35,3 +35,7 @@ func _process(delta):
 			$AnimatedSprite2D.rotation = PI / 2 if velocity.x > 0 else 3 * PI / 2
 	elif velocity.y != 0:
 		$AnimatedSprite2D.rotation = 0 if velocity.y < 0 else PI
+
+
+func _on_animated_sprite_2d_animation_finished():
+	$AnimatedSprite2D.play("idle")

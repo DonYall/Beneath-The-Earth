@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnflxl027j3tr"]
+
+[ext_resource type="Texture2D" uid="uid://o5hyterlmie8" path="res://Assets/Textures/Enemy/active.png" id="1_ngi0y"]
+[ext_resource type="Texture2D" uid="uid://cm5rxm1h0e4gb" path="res://Assets/Textures/Enemy/passive.png" id="2_t2now"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0wnnr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ngi0y")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t2now")
+}],
+"loop": true,
+"name": &"passive",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ip7ay"]
+radius = 47.0956
+
+[node name="Enemy" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0wnnr")
+animation = &"active"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ip7ay")
