@@ -7,10 +7,15 @@ func _process(delta):
 	pass
 
 func consume():
-	# TODO: deal damage to player
 	print("Used spike item, deal damage to player")
+	queue_free()
 	pass
 
 func on_enemy_enter():
-	# TODO: kill enemy
 	pass
+
+func _on_body_entered(body: Node2D):
+	# kill enemy
+	body.queue_free()
+
+	consume()
