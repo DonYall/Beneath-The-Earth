@@ -1,6 +1,6 @@
-extends Area2D
+extends CharacterBody2D
 
-@export var speed = 250
+var speed = (randi() % 75 + 200)
 var screen_size
 var player_instance
 

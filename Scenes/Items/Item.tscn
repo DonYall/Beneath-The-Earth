@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://d3l85uialmlus" path="res://Assets/Textures/Items/placeholder.png" id="2_wac4y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1dexw"]
-radius = 125.196
+radius = 28.0179
 
 [node name="Item" type="StaticBody2D"]
 script = ExtResource("1_a3ppb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_wac4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

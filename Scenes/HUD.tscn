@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://bv83yfib8dgc5"]
+[gd_scene load_steps=2 format=3 uid="uid://bv83yfib8dgc5"]
+
+[ext_resource type="Script" path="res://Scenes/HUD.gd" id="1_7g1h1"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_7g1h1")
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Health: 10"

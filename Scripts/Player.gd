@@ -1,7 +1,10 @@
 extends Area2D
 
 @export var speed = 400
+@export var health = 10
 var screen_size
+
+signal hit
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -37,5 +40,9 @@ func _process(delta):
 		$AnimatedSprite2D.rotation = 0 if velocity.y < 0 else PI
 
 
-func _on_animated_sprite_2d_animation_finished():
+func _on_animated_sprite_2d_animation_finished():	
 	$AnimatedSprite2D.play("idle")
+
+func _on_body_entered(body):
+	if body.name == "Enemy":
+		emit_signal("hit")

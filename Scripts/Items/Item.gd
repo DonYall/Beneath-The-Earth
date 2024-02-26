@@ -2,8 +2,7 @@ extends StaticBody2D
 
 
 func _ready():
-	on_pickup()
-
+	pass
 
 func _process(delta):
 	pass
