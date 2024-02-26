@@ -14,6 +14,5 @@ func consume():
 	# TODO: Implement enemy spawner
 	pass
 
-
 func _on_spawn_timer_timeout():
 	pass # Replace with function body.

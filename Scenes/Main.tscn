@@ -1,9 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://vhao644o8frr"]
+[gd_scene load_steps=2 format=3 uid="uid://vhao644o8frr"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_bkaxq"]
-[ext_resource type="PackedScene" uid="uid://cp0jqas1n1gim" path="res://Scenes/Player.tscn" id="1_wmqh7"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" groups=["player"]]
 script = ExtResource("1_bkaxq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -13,6 +12,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.796078, 0.745098, 0.631373, 1)
-
-[node name="Player" parent="." instance=ExtResource("1_wmqh7")]
-position = Vector2(27, 28)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnflxl027j3tr"]
+[gd_scene load_steps=6 format=3 uid="uid://bnflxl027j3tr"]
 
+[ext_resource type="Script" path="res://Scenes/Enemy.gd" id="1_ibpj8"]
 [ext_resource type="Texture2D" uid="uid://o5hyterlmie8" path="res://Assets/Textures/Enemy/active.png" id="1_ngi0y"]
 [ext_resource type="Texture2D" uid="uid://cm5rxm1h0e4gb" path="res://Assets/Textures/Enemy/passive.png" id="2_t2now"]
 
@@ -26,6 +27,7 @@ animations = [{
 radius = 47.0956
 
 [node name="Enemy" type="Area2D"]
+script = ExtResource("1_ibpj8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0wnnr")
