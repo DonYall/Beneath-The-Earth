@@ -19,6 +19,7 @@ func _on_spawn_timer_timeout():
 	# create instance of enemy scene
 	var enemy = enemy_scene.instantiate()
 	enemy.set_player(player_instance)
+	enemy.add_to_group("enemies", true)
 
 	# position to spawn enemy
 	position = self.position 

@@ -44,5 +44,5 @@ func _on_animated_sprite_2d_animation_finished():
 	$AnimatedSprite2D.play("idle")
 
 func _on_body_entered(body):
-	if body.name == "Enemy":
+	if body.is_in_group("enemies"):
 		emit_signal("hit")
