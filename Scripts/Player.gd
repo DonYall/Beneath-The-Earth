@@ -1,4 +1,4 @@
-extends CharacterBody2D 
+extends Area2D
 
 @export var speed = 400
 @export var health = 10
@@ -25,7 +25,7 @@ func _process(delta):
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-	var collision_info = move_and_collide(velocity * delta)
+	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
 	if velocity.x != 0:
@@ -38,10 +38,6 @@ func _process(delta):
 			$AnimatedSprite2D.rotation = PI / 2 if velocity.x > 0 else 3 * PI / 2
 	elif velocity.y != 0:
 		$AnimatedSprite2D.rotation = 0 if velocity.y < 0 else PI
-
-	# check for collisions
-	if collision_info:
-		_on_body_entered(collision_info.get_collider())
 
 
 func _on_animated_sprite_2d_animation_finished():	

@@ -30,5 +30,5 @@ func _process(delta):
 
 		if velocity.length() > 0:
 			velocity = velocity.normalized() * speed
-		var collision_info = move_and_collide(velocity * delta)
+		position += velocity * delta
 		position = position.clamp(Vector2.ZERO, screen_size)

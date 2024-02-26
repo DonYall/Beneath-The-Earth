@@ -46,9 +46,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir5ya"]
 size = Vector2(54, 55)
 
-[node name="Player" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 12
+[node name="Player" type="Area2D"]
 script = ExtResource("1_024b0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -58,4 +56,5 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ir5ya")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
