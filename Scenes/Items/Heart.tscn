@@ -1,12 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5udklepcm7pr"]
 
-[ext_resource type="PackedScene" uid="uid://ha8ninm5fg3s" path="res://Scenes/Items/Item.tscn" id="1_2vi5y"]
 [ext_resource type="Script" path="res://Scripts/Items/Heart.gd" id="2_uk5ar"]
 [ext_resource type="Texture2D" uid="uid://btikuionk2yyk" path="res://Assets/Textures/Items/heart.png" id="2_y2bbk"]
 
-[node name="Item" instance=ExtResource("1_2vi5y")]
-script = ExtResource("2_uk5ar")
-health_increment = 1
+[sub_resource type="CircleShape2D" id="CircleShape2D_1dexw"]
+radius = 28.0179
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Item" type="Area2D"]
+script = ExtResource("2_uk5ar")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_y2bbk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1dexw")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

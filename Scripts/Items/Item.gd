@@ -1,5 +1,8 @@
 extends Area2D 
 
+# set this to false if you don't want the item to despawn on pick up
+# ex. enemy spawner
+@export var use_pickup_behaviour = true
 
 func _ready():
 	pass
@@ -24,7 +27,8 @@ func consume():
 
 func _on_area_entered(area:Area2D):
 	# this function gets called when the player collides with this item
-	pass # Replace with function body.
+	if use_pickup_behaviour:
+		on_pickup()
 
 func _on_body_entered(body:Node2D):
 	# this function gets called when an enemy collides with this item

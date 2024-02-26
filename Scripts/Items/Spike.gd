@@ -8,7 +8,6 @@ func _process(delta):
 
 func consume():
 	print("Used spike item, deal damage to player")
-	queue_free()
 	pass
 
 func on_enemy_enter():
@@ -16,10 +15,11 @@ func on_enemy_enter():
 
 func _on_area_entered(area: Area2D):
 	area.emit_signal("hit")
-	consume()
+
+	super(area)
 
 func _on_body_entered(body: Node2D):
 	# kill enemy
 	body.queue_free()
 
-	consume()
+	on_pickup()
