@@ -4,12 +4,16 @@ extends Area2D
 @export var health = 10
 var screen_size
 
+# needed to reset health after each new game
+var starting_health
+
 signal hit
 signal gain_health
 signal fossil_collected
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	starting_health = health
 
 func _process(delta):
 	var velocity = Vector2.ZERO
