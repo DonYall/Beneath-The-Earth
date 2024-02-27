@@ -5,6 +5,7 @@ extends Area2D
 var screen_size
 
 signal hit
+signal gain_health
 
 func _ready():
 	screen_size = get_viewport_rect().size

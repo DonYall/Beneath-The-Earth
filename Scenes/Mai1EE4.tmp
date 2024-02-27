@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://vhao644o8frr"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_bkaxq"]
+[ext_resource type="PackedScene" uid="uid://dnuv7mqw80h82" path="res://Scenes/Items/Spike.tscn" id="2_s2ksb"]
+[ext_resource type="PackedScene" uid="uid://ha8ninm5fg3s" path="res://Scenes/Items/Item.tscn" id="3_53duj"]
+[ext_resource type="PackedScene" uid="uid://c5udklepcm7pr" path="res://Scenes/Items/Heart.tscn" id="4_pwaql"]
+
+[node name="Main" type="Node" groups=["player"]]
+script = ExtResource("1_bkaxq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.796078, 0.745098, 0.631373, 1)
+
+[node name="Item" parent="." instance=ExtResource("2_s2ksb")]
+position = Vector2(475, 300)
+
+[node name="Item2" parent="." instance=ExtResource("3_53duj")]
+position = Vector2(513, 459)
+
+[node name="Item3" parent="." instance=ExtResource("4_pwaql")]
+position = Vector2(818, 232)

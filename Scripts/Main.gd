@@ -15,6 +15,7 @@ func _ready():
 	hud_instance = hud_scene.instantiate()
 	hud_instance.set_player(player_instance)
 	player_instance.connect("hit", on_player_hit)
+	player_instance.connect("gain_health", on_consume_heart)
 	add_child(hud_instance)
 
 func _process(delta):
@@ -22,4 +23,9 @@ func _process(delta):
 
 func on_player_hit():
 	player_instance.health -= 1
+	hud_instance.get_node("HealthLabel").text = "Health: " + str(player_instance.health)
+	
+# called when the player picks up a heart
+func on_consume_heart():
+	player_instance.health += 1
 	hud_instance.get_node("HealthLabel").text = "Health: " + str(player_instance.health)

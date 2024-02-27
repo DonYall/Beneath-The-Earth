@@ -10,3 +10,7 @@ func consume():
 	# TODO: add to player health
 	print("Picked up health, add to player's health")
 	pass
+
+func _on_area_entered(area: Area2D):
+	area.emit_signal("gain_health")
+	on_pickup()
