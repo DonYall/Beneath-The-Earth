@@ -15,8 +15,8 @@
 
 [node name="Item" instance=ExtResource("1_10kkr")]
 script = ExtResource("2_uxidi")
-fossil_textures = [ExtResource("3_duwab"), ExtResource("4_4kbke"), ExtResource("5_cm6tq"), ExtResource("6_esy5b"), ExtResource("7_hng3a"), ExtResource("8_vutfy"), ExtResource("9_bwc4n"), ExtResource("10_vc2n2")]
+fossil_textures = Array[CompressedTexture2D]([ExtResource("3_duwab"), ExtResource("4_4kbke"), ExtResource("5_cm6tq"), ExtResource("6_esy5b"), ExtResource("7_hng3a"), ExtResource("8_vutfy"), ExtResource("9_bwc4n"), ExtResource("10_vc2n2")])
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(1, 1)
+scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_meuuf")

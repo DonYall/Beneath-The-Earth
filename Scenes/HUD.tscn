@@ -9,3 +9,9 @@ script = ExtResource("1_7g1h1")
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Health: 10"
+
+[node name="FossilsCollectedLabel" type="Label" parent="."]
+offset_top = 22.0
+offset_right = 79.0
+offset_bottom = 45.0
+text = "Fossils Collected: 0/8"

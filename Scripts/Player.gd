@@ -6,6 +6,7 @@ var screen_size
 
 signal hit
 signal gain_health
+signal fossil_collected
 
 func _ready():
 	screen_size = get_viewport_rect().size

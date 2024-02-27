@@ -24,3 +24,7 @@ func change_texture(index):
 		return	
 
 	sprite.set_texture(fossil_textures[index])
+	
+func _on_area_entered(area: Area2D):
+	area.emit_signal("fossil_collected")
+	on_pickup()
