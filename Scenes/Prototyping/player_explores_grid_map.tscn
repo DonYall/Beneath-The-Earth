@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://crbnxjwefsqdj"]
+
+[ext_resource type="PackedScene" uid="uid://d4athl0xv0yu5" path="res://Scenes/Grid/grid_map.tscn" id="1_unp87"]
+[ext_resource type="PackedScene" uid="uid://cp0jqas1n1gim" path="res://Scenes/Player.tscn" id="2_mj8yv"]
+
+[node name="PlayerExploresGridMap" type="Node2D"]
+
+[node name="GridMap" parent="." instance=ExtResource("1_unp87")]
+position = Vector2(712, 137)
+
+[node name="Player" parent="." instance=ExtResource("2_mj8yv")]
+position = Vector2(414, 465)

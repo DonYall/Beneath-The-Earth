@@ -32,7 +32,10 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.stop()
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+	
+	# Temporarily commenting out. We probably don't want to clamp to screensize
+	# but instead have actual walls / boundaries
+	#position = position.clamp(Vector2.ZERO, screen_size)
 	
 	if velocity.x != 0:
 		if velocity.y != 0:

@@ -2,7 +2,6 @@ extends Area2D
 
 signal cell_ready_to_be_destroyed
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
