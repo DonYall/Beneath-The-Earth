@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://druwwdsfoxuce"]
+
+[ext_resource type="FontFile" uid="uid://dxiq003dsq4qq" path="res://Assets/Fonts/Dinosaur Skin.ttf" id="1_5aqgp"]
+[ext_resource type="Script" path="res://Scenes/GameScenes/MainMenu.gd" id="1_df23t"]
+[ext_resource type="Texture2D" uid="uid://dg4cth0121vsd" path="res://Assets/Textures/Items/Fossils/fossil-8.png" id="2_06xgh"]
+[ext_resource type="Texture2D" uid="uid://co7lqtnp25bp7" path="res://Assets/Textures/Items/Fossils/fossil-3.png" id="3_ql73k"]
+[ext_resource type="Texture2D" uid="uid://b4malxupeh1hm" path="res://Assets/Textures/Items/Fossils/fossil-1.png" id="4_7v3rx"]
+[ext_resource type="Texture2D" uid="uid://csi3bypbl318m" path="res://Assets/Textures/Items/Fossils/fossil-5.png" id="5_ekv2b"]
+[ext_resource type="Texture2D" uid="uid://gon2mifw6ejb" path="res://Assets/Textures/Items/Fossils/fossil-6.png" id="6_4r47f"]
+[ext_resource type="Texture2D" uid="uid://cqneih52tmeac" path="res://Assets/Textures/Items/Fossils/fossil-4.png" id="7_5h3ye"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_df23t")
+
+[node name="BackgroundColour" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 40.0
+offset_right = 1155.0
+offset_bottom = 156.0
+theme_override_fonts/font = ExtResource("1_5aqgp")
+theme_override_font_sizes/font_size = 85
+text = "BENEATH THE EARTH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions" type="Button" parent="."]
+offset_left = 453.0
+offset_top = 432.0
+offset_right = 713.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5aqgp")
+theme_override_font_sizes/font_size = 30
+text = "INSTRUCTIONS
+"
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 272.0
+offset_right = 682.0
+offset_bottom = 377.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5aqgp")
+theme_override_font_sizes/font_size = 50
+text = "START"
+
+[node name="Fossil-8" type="Sprite2D" parent="."]
+position = Vector2(140, 288)
+texture = ExtResource("2_06xgh")
+
+[node name="Fossil-3" type="Sprite2D" parent="."]
+position = Vector2(341, 319)
+rotation = -1.41451
+texture = ExtResource("3_ql73k")
+
+[node name="Fossil-1" type="Sprite2D" parent="."]
+position = Vector2(123, 481)
+texture = ExtResource("4_7v3rx")
+
+[node name="Fossil-5" type="Sprite2D" parent="."]
+position = Vector2(923, 294)
+rotation = -0.855058
+texture = ExtResource("5_ekv2b")
+
+[node name="Fossil-6" type="Sprite2D" parent="."]
+position = Vector2(957, 523)
+rotation = -0.787278
+texture = ExtResource("6_4r47f")
+
+[node name="Fossil-4" type="Sprite2D" parent="."]
+position = Vector2(291, 481)
+texture = ExtResource("7_5h3ye")
+
+[connection signal="pressed" from="Instructions" to="." method="_on_instructions_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

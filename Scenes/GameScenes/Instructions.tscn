@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqtqibq5mfor5"]
+
+[ext_resource type="Script" path="res://Scenes/GameScenes/Instructions.gd" id="1_50xca"]
+[ext_resource type="FontFile" uid="uid://dxiq003dsq4qq" path="res://Assets/Fonts/Dinosaur Skin.ttf" id="1_s4rl8"]
+[ext_resource type="Texture2D" uid="uid://dg4cth0121vsd" path="res://Assets/Textures/Items/Fossils/fossil-8.png" id="2_weuti"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_50xca")
+
+[node name="BackgroundColour" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 19.0
+offset_right = 1155.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("1_s4rl8")
+theme_override_font_sizes/font_size = 85
+text = "Instructions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionsText" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 150.0
+offset_right = 1129.0
+offset_bottom = 553.0
+theme_override_fonts/font = ExtResource("1_s4rl8")
+theme_override_font_sizes/font_size = 30
+text = "The king has assigned you to dig up the fossil of a mythical creature for your kingdom… 
+*** Press WASD or use the arrow keys to move. ***
+Move into a block of dirt to break it, possibly unveiling an item below it.
+Depending on the type of item, you may want to walk over it to pick it up. Be careful as some items might hurt you. And other dangers...
+You win if you somehow collect all the fossils. You lose if.. well.. you die.
+
+"
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 469.0
+offset_top = 507.0
+offset_right = 673.0
+offset_bottom = 612.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_s4rl8")
+theme_override_font_sizes/font_size = 50
+text = "BACK
+"
+
+[node name="Fossil-8" type="Sprite2D" parent="."]
+position = Vector2(952, 75)
+scale = Vector2(0.658824, 0.658824)
+texture = ExtResource("2_weuti")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
