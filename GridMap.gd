@@ -59,7 +59,9 @@ func _place_fossils():
 		var fossil_instance = fossil_scene.instantiate()
 
 		fossil_instance.position = Vector2(spawn_position.x + grid_cell_offset, spawn_position.y + grid_cell_offset) 
-		print(fossil_instance.position)
+
+		# change fossil texture
+		fossil_instance.change_texture(i)
 
 		add_child(fossil_instance)
 	

@@ -3,11 +3,10 @@ extends "res://Scripts/Items/Item.gd"
 @export var fossil_textures: Array[CompressedTexture2D] = []
 var sprite
 
-func _ready():
-	sprite = $Sprite2D
+signal spawned
 
-	# set default texture to first fossil
-	change_texture(0)
+func _ready():
+	self.connect("spawned", on_spawn)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -19,9 +18,7 @@ func consume():
 
 # this function will change the Sprite2D's texture
 func change_texture(index):
-	# if sprite is null, then don't do anything
-	if(sprite == null):
-		return	
+	sprite = $Sprite2D
 
 	sprite.set_texture(fossil_textures[index])
 	
@@ -29,3 +26,7 @@ func _on_area_entered(area: Area2D):
 	if area.name == "Player":
 		area.emit_signal("fossil_collected")
 		on_pickup()
+
+func on_spawn(index):
+	print("test")
+	change_texture(index)
