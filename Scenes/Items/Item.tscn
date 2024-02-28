@@ -7,6 +7,8 @@
 radius = 28.0179
 
 [node name="Item" type="Area2D"]
+collision_layer = 8
+collision_mask = 6
 script = ExtResource("1_a3ppb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

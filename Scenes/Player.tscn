@@ -47,6 +47,7 @@ animations = [{
 size = Vector2(54, 55)
 
 [node name="Player" type="Area2D" groups=["Player"]]
+collision_layer = 3
 script = ExtResource("1_024b0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Player"]]
