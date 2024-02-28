@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4athl0xv0yu5"]
+[gd_scene load_steps=5 format=3 uid="uid://d4athl0xv0yu5"]
 
 [ext_resource type="Script" path="res://GridMap.gd" id="1_a87gu"]
+[ext_resource type="PackedScene" uid="uid://c5udklepcm7pr" path="res://Scenes/Items/Heart.tscn" id="2_cna6o"]
+[ext_resource type="PackedScene" uid="uid://dnuv7mqw80h82" path="res://Scenes/Items/Spike.tscn" id="3_2fu18"]
+[ext_resource type="PackedScene" uid="uid://0dkrbow1aum" path="res://Scenes/Items/EnemySpawner.tscn" id="4_k4u32"]
 
 [node name="GridMap" type="Node2D"]
 script = ExtResource("1_a87gu")
+item_drops = {
+ExtResource("2_cna6o"): 20.0,
+ExtResource("3_2fu18"): 20.0,
+ExtResource("4_k4u32"): 10
+}
