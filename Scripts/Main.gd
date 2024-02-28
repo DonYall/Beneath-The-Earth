@@ -23,15 +23,17 @@ func _process(delta):
 
 # initial setup
 func initialize():
-	grid_scene = preload("res://Scenes/Grid/grid_map.tscn")
-	grid_instance = grid_scene.instantiate()
-	add_child(grid_instance)
 	player_scene = preload("res://Scenes/Player.tscn")
 	player_instance = player_scene.instantiate()
+	add_to_group("player")
 	add_child(player_instance)
+	grid_scene = preload("res://Scenes/Grid/grid_map.tscn")
+	grid_instance = grid_scene.instantiate()
+	grid_instance.player_instance = player_instance
+	add_child(grid_instance)
 	enemy_spawner_scene = preload("res://Scenes/Items/EnemySpawner.tscn")
 	enemy_spawner_instance = enemy_spawner_scene.instantiate()
-	enemy_spawner_instance.set_player(player_instance)
+	#enemy_spawner_instance.set_player(player_instance)
 	add_child(enemy_spawner_instance)
 	hud_scene = preload("res://Scenes/HUD.tscn")
 	hud_instance = hud_scene.instantiate()

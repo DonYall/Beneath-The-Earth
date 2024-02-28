@@ -18,7 +18,7 @@ func consume():
 func _on_spawn_timer_timeout():
 	# create instance of enemy scene
 	var enemy = enemy_scene.instantiate()
-	enemy.set_player(player_instance)
+	#enemy.set_player(player_instance)
 	enemy.add_to_group("enemies", true)
 
 	# position to spawn enemy
@@ -33,3 +33,6 @@ func _on_spawn_timer_timeout():
 
 func set_player(player):
 	player_instance = player
+
+func _on_area_entered(area: Area2D):
+	$SpawnTimer.start()

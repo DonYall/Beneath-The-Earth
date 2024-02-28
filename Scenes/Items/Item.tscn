@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ha8ninm5fg3s"]
+[gd_scene load_steps=3 format=3 uid="uid://ha8ninm5fg3s"]
 
 [ext_resource type="Script" path="res://Scripts/Items/Item.gd" id="1_a3ppb"]
-[ext_resource type="Texture2D" uid="uid://d3l85uialmlus" path="res://Assets/Textures/Items/placeholder.png" id="2_wac4y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1dexw"]
 radius = 28.0179
@@ -12,8 +11,7 @@ collision_mask = 6
 script = ExtResource("1_a3ppb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_wac4y")
+scale = Vector2(0.15, 0.15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1dexw")

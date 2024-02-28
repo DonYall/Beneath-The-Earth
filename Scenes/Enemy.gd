@@ -7,6 +7,7 @@ var player_instance
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
+	set_player(get_tree().get_root().get_node("Main/Player"))
 
 func set_player(player):
 	player_instance = player
@@ -17,7 +18,7 @@ func _process(delta):
 		var velocity = Vector2.ZERO
 		if player_instance.position.y == position.y:
 			return
-		var active = position.distance_to(player_instance.position) <= screen_size.x / 4
+		var active = position.distance_to(player_instance.position) <= screen_size.x
 		if not active:
 			$AnimatedSprite2D.play("passive")
 			return
@@ -31,4 +32,3 @@ func _process(delta):
 		if velocity.length() > 0:
 			velocity = velocity.normalized() * speed
 		move_and_collide(velocity * delta)
-		position = position.clamp(Vector2.ZERO, screen_size)
