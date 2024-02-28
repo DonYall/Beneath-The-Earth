@@ -10,6 +10,8 @@ var player_scene
 var enemy_spawner_scene
 var enemy_spawner_instance
 var hud_scene
+var grid_scene
+var grid_instance
 
 @export var start_position: Vector2 
 
@@ -21,6 +23,9 @@ func _process(delta):
 
 # initial setup
 func initialize():
+	grid_scene = preload("res://Scenes/Grid/grid_map.tscn")
+	grid_instance = grid_scene.instantiate()
+	add_child(grid_instance)
 	player_scene = preload("res://Scenes/Player.tscn")
 	player_instance = player_scene.instantiate()
 	add_child(player_instance)
