@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8m44lmu2fm7j"]
+
+[ext_resource type="PackedScene" uid="uid://cp0jqas1n1gim" path="res://Scenes/Player.tscn" id="1_hehog"]
+[ext_resource type="PackedScene" uid="uid://c4ujanptka8hm" path="res://Scenes/Grid/grid_cell.tscn" id="2_sad5i"]
+
+[node name="PlayerBreaksCellExample" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_hehog")]
+position = Vector2(236, 289)
+
+[node name="GridCell" parent="." instance=ExtResource("2_sad5i")]
+position = Vector2(583, 227)
