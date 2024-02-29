@@ -97,11 +97,12 @@ func _place_items():
 			var spawn_position = grid_cells[i].position
 			var item_instance = item.instantiate()
 
-
-
 			item_instance.position = Vector2(spawn_position.x + item_cell_offset, spawn_position.y + item_cell_offset)
 
-			add_child(item_instance)
+			item_instance.connect("started", item_instance.on_start)
+			grid_cells[i].item_instance = item_instance
+
+			get_tree().get_root().add_child(item_instance)
 
 
 # get the item for the corresponding chance

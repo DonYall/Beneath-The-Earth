@@ -4,6 +4,8 @@ extends Area2D
 # ex. enemy spawner
 @export var use_pickup_behaviour = true
 
+signal started # when the player breaks the cell with this item
+
 func _ready():
 	pass
 
@@ -33,3 +35,6 @@ func _on_area_entered(area:Area2D):
 func _on_body_entered(body:Node2D):
 	# this function gets called when an enemy collides with this item
 	pass # Replace with function body.
+
+func on_start():
+	pass

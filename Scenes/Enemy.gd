@@ -30,5 +30,5 @@ func _process(delta):
 		velocity.y = sin(theta)
 
 		if velocity.length() > 0:
-			velocity = velocity.normalized() * speed
+			velocity = velocity * speed
 		move_and_collide(velocity * delta)

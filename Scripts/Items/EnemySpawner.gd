@@ -3,6 +3,7 @@ extends "res://Scripts/Items/Item.gd"
 @export var enemy_scene: PackedScene
 var player_instance
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -22,17 +23,19 @@ func _on_spawn_timer_timeout():
 	enemy.add_to_group("enemies", true)
 
 	# position to spawn enemy
-	position = self.position 
+	enemy.set_global_position(self.get_global_position())
+	
+	get_tree().get_root().add_child(enemy)
 
-	# move enemy to position
-	enemy.position = position
-	
-	add_child(enemy)
-	
+	print("Self: " + str(position))
+	print("Enemy: " + str(enemy.position))
+
 	pass # Replace with function body.
 
 func set_player(player):
 	player_instance = player
 
-func _on_area_entered(area: Area2D):
+func on_start():
+	print("test")
 	$SpawnTimer.start()
+	print($SpawnTimer)

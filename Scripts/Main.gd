@@ -7,8 +7,6 @@ var fossils_collected = 0
 
 # scene references
 var player_scene
-var enemy_spawner_scene
-var enemy_spawner_instance
 var hud_scene
 var grid_scene
 var grid_instance
@@ -31,10 +29,6 @@ func initialize():
 	grid_instance = grid_scene.instantiate()
 	grid_instance.player_instance = player_instance
 	add_child(grid_instance)
-	enemy_spawner_scene = preload("res://Scenes/Items/EnemySpawner.tscn")
-	enemy_spawner_instance = enemy_spawner_scene.instantiate()
-	#enemy_spawner_instance.set_player(player_instance)
-	add_child(enemy_spawner_instance)
 	hud_scene = preload("res://Scenes/HUD.tscn")
 	hud_instance = hud_scene.instantiate()
 	hud_instance.set_player(player_instance)
