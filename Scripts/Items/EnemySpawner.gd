@@ -28,9 +28,6 @@ func _on_spawn_timer_timeout():
 	
 	get_tree().get_root().add_child(enemy)
 
-	print("Self: " + str(position))
-	print("Enemy: " + str(enemy.position))
-
 	pass # Replace with function body.
 
 func set_player(player):

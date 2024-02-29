@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4ujanptka8hm"]
+[gd_scene load_steps=5 format=3 uid="uid://c4ujanptka8hm"]
 
 [ext_resource type="Script" path="res://Scenes/Grid/grid_cell.gd" id="1_eab1k"]
 [ext_resource type="Texture2D" uid="uid://bh5qloantkyrp" path="res://Assets/Textures/World/Dirt.png" id="2_8f6gt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nikjf"]
 size = Vector2(120, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f57c"]
+size = Vector2(59, 59)
 
 [node name="GridCell" type="Area2D"]
 collision_layer = 16
@@ -25,5 +28,14 @@ z_index = 1
 position = Vector2(67, 117)
 scale = Vector2(0.765, 0.765)
 texture = ExtResource("2_8f6gt")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(2, 2)
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(30, 30)
+shape = SubResource("RectangleShape2D_6f57c")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
