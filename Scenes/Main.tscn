@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://vhao644o8frr"]
+[gd_scene load_steps=5 format=3 uid="uid://vhao644o8frr"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_bkaxq"]
+[ext_resource type="AudioStream" uid="uid://bjuapm617y7ny" path="res://Assets/SFX/hurt.wav" id="2_lw1cx"]
+[ext_resource type="AudioStream" uid="uid://d2chhvewwmfs1" path="res://Assets/SFX/health.wav" id="3_1txyj"]
+[ext_resource type="AudioStream" uid="uid://c3mov24dqxwia" path="res://Assets/SFX/collected_fossil.wav" id="4_jm327"]
 
 [node name="Main" type="Node" groups=["player"]]
 script = ExtResource("1_bkaxq")
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_lw1cx")
+volume_db = -6.149
+
+[node name="HealthSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1txyj")
+volume_db = -15.0
+pitch_scale = 0.9
+
+[node name="CollectedFossilSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jm327")
+volume_db = -10.0

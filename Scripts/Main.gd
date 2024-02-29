@@ -54,13 +54,16 @@ func set_fossils_collected(fossils: int):
 
 func on_player_hit():
 	set_player_health(player_instance.health - 1)
+	$HurtSound.play()
 	
 # called when the player picks up a heart
 func on_consume_heart():
 	set_player_health(player_instance.health + 1)
+	$HealthSound.play()
 	
 func on_consume_fossil():
 	set_fossils_collected(fossils_collected + 1)
+	$CollectedFossilSound.play()
 
 func on_win():
 	# TODO: Implement win screen
