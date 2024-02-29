@@ -21,6 +21,9 @@ func _process(delta):
 
 # initial setup
 func initialize():
+	if(get_tree().get_root().get_node("MainMenu") != null):
+		get_tree().get_root().get_node("MainMenu").queue_free()
+
 	player_scene = preload("res://Scenes/Player.tscn")
 	player_instance = player_scene.instantiate()
 	add_to_group("player")
@@ -45,6 +48,9 @@ func set_player_health(health: int):
 	player_instance.health = health
 	hud_instance.get_node("HealthLabel").text = "Health: " + str(player_instance.health)
 
+	if health <= 0:
+		on_lose()
+
 func set_fossils_collected(fossils: int):
 	fossils_collected = fossils
 	hud_instance.get_node("FossilsCollectedLabel").text = "Fossils Collected: " + str(fossils_collected) + "/8"
@@ -66,5 +72,9 @@ func on_consume_fossil():
 	$CollectedFossilSound.play()
 
 func on_win():
-	# TODO: Implement win screen
-	print("Player won!")
+	hud_instance.show_win()
+	$WinSound.play()
+	
+func on_lose():
+	hud_instance.show_game_over()
+	$LoseSound.play()

@@ -14,7 +14,7 @@ func set_player(player):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if player_instance:
+	if player_instance != null:
 		var velocity = Vector2.ZERO
 		if player_instance.position.y == position.y:
 			return

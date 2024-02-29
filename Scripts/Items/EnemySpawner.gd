@@ -26,7 +26,7 @@ func _on_spawn_timer_timeout():
 	# position to spawn enemy
 	enemy.set_global_position(self.get_global_position())
 	
-	get_tree().get_root().add_child(enemy)
+	get_tree().get_root().get_node("Main").add_child(enemy)
 
 	pass # Replace with function body.
 
@@ -34,6 +34,5 @@ func set_player(player):
 	player_instance = player
 
 func on_start():
-	print("test")
 	$SpawnTimer.start(first_wait_time)
 	$SpawnTimer.wait_time = wait_time

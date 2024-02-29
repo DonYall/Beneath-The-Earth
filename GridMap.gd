@@ -102,7 +102,7 @@ func _place_items():
 			item_instance.connect("started", item_instance.on_start)
 			grid_cells[i].item_instance = item_instance
 
-			get_tree().get_root().add_child(item_instance)
+			get_tree().get_root().get_node("Main").add_child(item_instance)
 
 
 # get the item for the corresponding chance

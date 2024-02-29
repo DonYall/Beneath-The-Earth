@@ -10,11 +10,13 @@ anchors_preset = 0
 script = ExtResource("1_50xca")
 
 [node name="BackgroundColour" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 647.0
 color = Color(0, 0, 0, 1)
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 19.0
 offset_right = 1155.0
@@ -26,6 +28,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="InstructionsText" type="Label" parent="."]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 150.0
 offset_right = 1129.0
@@ -42,6 +45,7 @@ You win if you somehow collect all the fossils. You lose if.. well.. you die.
 autowrap_mode = 2
 
 [node name="StartButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 469.0
 offset_top = 507.0
 offset_right = 673.0
