@@ -18,7 +18,7 @@ func _process(delta):
 		var velocity = Vector2.ZERO
 		if player_instance.position.y == position.y:
 			return
-		var active = position.distance_to(player_instance.position) <= screen_size.x
+		var active = position.distance_to(player_instance.position) <= screen_size.x / 2
 		if not active:
 			$AnimatedSprite2D.play("passive")
 			return
