@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = (randi() % 75 + 200)
+@export var speed = 100 
 var screen_size
 var player_instance
 

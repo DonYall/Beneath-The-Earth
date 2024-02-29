@@ -1,8 +1,9 @@
 extends "res://Scripts/Items/Item.gd"
 
 @export var enemy_scene: PackedScene
+@export var wait_time = 20
+@export var first_wait_time = 5
 var player_instance
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,5 +38,5 @@ func set_player(player):
 
 func on_start():
 	print("test")
-	$SpawnTimer.start()
-	print($SpawnTimer)
+	$SpawnTimer.start(first_wait_time)
+	$SpawnTimer.wait_time = wait_time
