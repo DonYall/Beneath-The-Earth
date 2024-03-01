@@ -39,6 +39,8 @@ func initialize():
 	player_instance.connect("gain_health", on_consume_heart)
 	player_instance.connect("fossil_collected", on_consume_fossil)
 	add_child(hud_instance)
+	
+	new_game()
 
 func new_game():
 	player_instance.position = start_position

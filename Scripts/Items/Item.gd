@@ -25,16 +25,9 @@ func on_pickup():
 func consume():
 	push_error("UNIMPLEMENTED ERROR: consume()")
 
-
-
-func _on_area_entered(area:Area2D):
-	# this function gets called when the player collides with this item
-	if use_pickup_behaviour:
-		on_pickup()
-
 func _on_body_entered(body:Node2D):
-	# this function gets called when an enemy collides with this item
-	pass # Replace with function body.
+	if body.name == "Player" and use_pickup_behaviour:
+		on_pickup()
 
 func on_start():
 	pass

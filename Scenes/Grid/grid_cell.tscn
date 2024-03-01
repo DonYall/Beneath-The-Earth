@@ -38,4 +38,4 @@ collision_mask = 4
 position = Vector2(30, 30)
 shape = SubResource("RectangleShape2D_6f57c")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

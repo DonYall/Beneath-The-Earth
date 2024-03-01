@@ -22,9 +22,9 @@ func change_texture(index):
 
 	sprite.set_texture(fossil_textures[index])
 	
-func _on_area_entered(area: Area2D):
-	if area.name == "Player":
-		area.emit_signal("fossil_collected")
+func _on_body_entered(body: Node2D):
+	if body.name == "Player":
+		body.emit_signal("fossil_collected")
 		on_pickup()
 
 func on_spawn(index):

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://vhao644o8frr"]
+[gd_scene load_steps=8 format=3 uid="uid://vhao644o8frr"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_bkaxq"]
 [ext_resource type="AudioStream" uid="uid://bjuapm617y7ny" path="res://Assets/SFX/hurt.wav" id="2_lw1cx"]
+[ext_resource type="PackedScene" uid="uid://v7jqva1oac1x" path="res://Scenes/Other/Wall.tscn" id="2_qmq0x"]
 [ext_resource type="AudioStream" uid="uid://d2chhvewwmfs1" path="res://Assets/SFX/health.wav" id="3_1txyj"]
 [ext_resource type="AudioStream" uid="uid://c3mov24dqxwia" path="res://Assets/SFX/collected_fossil.wav" id="4_jm327"]
 [ext_resource type="AudioStream" uid="uid://dwtu5x43b5mhg" path="res://Assets/SFX/win.wav" id="5_awoit"]
@@ -9,6 +10,43 @@
 
 [node name="Main" type="Node" groups=["player"]]
 script = ExtResource("1_bkaxq")
+start_position = Vector2(1300, -150)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="GroundColor" type="ColorRect" parent="."]
+offset_left = -18399.0
+offset_top = -16693.0
+offset_right = -18359.0
+offset_bottom = -16653.0
+scale = Vector2(1000, 1000)
+color = Color(0.105882, 0.0509804, 0.0156863, 1)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource("2_qmq0x")]
+position = Vector2(-201, -259)
+scale = Vector2(88.52, 1)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("2_qmq0x")]
+position = Vector2(3380, -260)
+rotation = 1.57079
+scale = Vector2(88.52, 1)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("2_qmq0x")]
+position = Vector2(-172, -244)
+rotation = 1.57079
+scale = Vector2(88.52, 1)
+
+[node name="Wall4" parent="Walls" instance=ExtResource("2_qmq0x")]
+position = Vector2(-175, 3251)
+scale = Vector2(88.52, 0.636471)
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dbhe4")
+volume_db = -10.0
 
 [node name="HurtSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_lw1cx")
@@ -25,8 +63,4 @@ volume_db = -10.0
 
 [node name="WinSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_awoit")
-volume_db = -10.0
-
-[node name="LoseSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_dbhe4")
 volume_db = -10.0

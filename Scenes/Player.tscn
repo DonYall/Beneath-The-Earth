@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cp0jqas1n1gim"]
+[gd_scene load_steps=13 format=3 uid="uid://cp0jqas1n1gim"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_024b0"]
 [ext_resource type="Texture2D" uid="uid://dqml4xltxyq4g" path="res://Assets/Textures/Player/digging1.png" id="1_steu6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bym220adro238" path="res://Assets/Textures/Player/digging5.png" id="5_on6a2"]
 [ext_resource type="Texture2D" uid="uid://rhlhm8vxypra" path="res://Assets/Textures/Player/digging6.png" id="6_o4282"]
 [ext_resource type="Texture2D" uid="uid://cwi6rgjfck7c5" path="res://Assets/Textures/Player/idle.png" id="7_i5jri"]
+[ext_resource type="Texture2D" uid="uid://bf0o3ncidki4d" path="res://Assets/Textures/Player/2d_lights_and_shadows_neutral_point_light.webp" id="9_pdkyi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ovbxp"]
 animations = [{
@@ -44,15 +45,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir5ya"]
-size = Vector2(54, 55)
+size = Vector2(62, 62)
 
-[node name="Player" type="Area2D" groups=["Player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60y1h"]
+size = Vector2(68.5, 67.25)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 10
 collision_layer = 3
 script = ExtResource("1_024b0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Player"]]
+rotation = -3.14159
 sprite_frames = SubResource("SpriteFrames_ovbxp")
-animation = &"idle"
+animation = &"digging"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
 shape = SubResource("RectangleShape2D_ir5ya")
@@ -60,5 +66,16 @@ shape = SubResource("RectangleShape2D_ir5ya")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.75, 0.75)
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+texture = ExtResource("9_pdkyi")
+texture_scale = 7.5
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.25, 0.375)
+shape = SubResource("RectangleShape2D_60y1h")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

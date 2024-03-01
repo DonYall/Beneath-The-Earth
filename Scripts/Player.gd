@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 @export var speed = 400
 @export var health = 10
@@ -16,7 +16,7 @@ func _ready():
 	starting_health = health
 
 func _process(delta):
-	var velocity = Vector2.ZERO
+	velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
@@ -31,11 +31,8 @@ func _process(delta):
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-	position += velocity * delta
-	
-	# Temporarily commenting out. We probably don't want to clamp to screensize
-	# but instead have actual walls / boundaries
-	#position = position.clamp(Vector2.ZERO, screen_size)
+		
+	move_and_slide()
 	
 	if velocity.x != 0:
 		if velocity.y != 0:
@@ -48,11 +45,12 @@ func _process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite2D.rotation = 0 if velocity.y < 0 else PI
 
-
 func _on_animated_sprite_2d_animation_finished():	
 	$AnimatedSprite2D.play("idle")
 
-func _on_body_entered(body):
+func _on_area_2d_body_entered(body):
 	if body.is_in_group("enemies"):
 		emit_signal("hit")
+		print("hit!")
 		body.queue_free()
+

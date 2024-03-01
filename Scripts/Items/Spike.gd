@@ -13,13 +13,12 @@ func consume():
 func on_enemy_enter():
 	pass
 
-func _on_area_entered(area: Area2D):
-	area.emit_signal("hit")
-
-	super(area)
-
 func _on_body_entered(body: Node2D):
-	# kill enemy
-	body.queue_free()
-
-	on_pickup()
+	# If player, damage them
+	if body.name == "Player":
+		body.emit_signal("hit")
+		super(body)
+	else:
+		# Otherwise kill enemy:
+		body.queue_free()
+		on_pickup()

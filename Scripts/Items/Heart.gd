@@ -11,6 +11,7 @@ func consume():
 	print("Picked up health, add to player's health")
 	pass
 
-func _on_area_entered(area: Area2D):
-	area.emit_signal("gain_health")
+func _on_body_entered(node: Node2D):
+	print("Health!")
+	node.emit_signal("gain_health")
 	on_pickup()
